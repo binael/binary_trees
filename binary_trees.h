@@ -68,5 +68,8 @@ heap_t *array_to_heap(int *array, size_t size);
 int *heap_to_sorted_array(heap_t *heap, size_t *size);
 int heap_extract(heap_t **root);
 size_t child_node_height(const binary_tree_t *tree);
+size_t tree_height(const binary_tree_t *tree);
+int number_of_nodes(const binary_tree_t *tree);
+int exponent(int base, int power);
 
 #endif /* end of header file */
