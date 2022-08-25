@@ -26,5 +26,8 @@ int main(void)
     printf("Is %d full: %d\n", root->left->n, full);
     full = binary_tree_is_full(root->right);
     printf("Is %d full: %d\n", root->right->n, full);
+    full = binary_tree_is_full(root->right->right);
+    printf("Is %d full: %d\n", root->right->right->n, full);
+
     return (0);
 }
