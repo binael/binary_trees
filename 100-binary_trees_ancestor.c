@@ -46,7 +46,7 @@ binary_tree_t *is_ancestor_parent(const binary_tree_t *first, const binary_tree_
 	{
 		return (first->parent);
 	}
-	if (second->parent == NULL)
+	if (second == NULL)
 	{
 		return (NULL);
 	}
