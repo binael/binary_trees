@@ -7,7 +7,8 @@
  *
  * Return: lowest ancestor node
  */
-binary_tree_t *binary_trees_ancestor(const binary_tree_t *first, const binary_tree_t *second)
+binary_tree_t *binary_trees_ancestor(const binary_tree_t *first,
+const binary_tree_t *second)
 {
 	binary_tree_t *lowest_ancestor;
 
@@ -29,7 +30,8 @@ binary_tree_t *binary_trees_ancestor(const binary_tree_t *first, const binary_tr
  *
  * Return: parent node or null
  */
-binary_tree_t *ancestor(const binary_tree_t *first, const binary_tree_t *second)
+binary_tree_t *ancestor(const binary_tree_t *first,
+const binary_tree_t *second)
 {
 	binary_tree_t *node, *loop;
 	int flag = 0;
