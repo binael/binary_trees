@@ -71,6 +71,6 @@ size_t child_node_height(const binary_tree_t *tree);
 size_t tree_height(const binary_tree_t *tree);
 int number_of_nodes(const binary_tree_t *tree);
 int exponent(int base, int power);
-binary_tree_t *is_ancestor_parent(const binary_tree_t *first, const binary_tree_t *second);
+binary_tree_t *ancestor(const binary_tree_t *first, const binary_tree_t *second);
 
 #endif /* end of header file */

@@ -9,49 +9,56 @@
  */
 binary_tree_t *binary_trees_ancestor(const binary_tree_t *first, const binary_tree_t *second)
 {
+	binary_tree_t *lowest_ancestor;
+
 	if (first == NULL || second == NULL)
 	{
 		return (NULL);
 	}
-	if (first->parent == NULL || second->parent == NULL)
-	{
-		return (NULL);
-	}
 
-	if (is_ancestor_parent(second, first))
-	{
-		return (second->parent);
-	}
-	else if (is_ancestor_parent(first, second))
-	{
-		return (first->parent);
-	}
+	lowest_ancestor = ancestor(first, second);
 
-	return (NULL);
+	return (lowest_ancestor);
 }
 
 
 /**
- * is_ancestor_parent - checks if the parent node of first is ancestor
+ * ancestor - checks if the parent node of first is ancestor
  * @first: pointer to the first node
  * @second: pointer to the second node
  *
  * Return: parent node or null
  */
-binary_tree_t *is_ancestor_parent(const binary_tree_t *first, const binary_tree_t *second)
+binary_tree_t *ancestor(const binary_tree_t *first, const binary_tree_t *second)
 {
-	binary_tree_t *node;
+	binary_tree_t *node, *loop;
+	int flag = 0;
 
-	if (first->parent == second)
+	while (1)
 	{
-		return (first->parent);
-	}
-	if (second == NULL)
-	{
-		return (NULL);
-	}
+		if (first == NULL && loop == NULL)
+		{
+			return (NULL);
+		}
 
-	node = is_ancestor_parent(first, second->parent);
+		loop = (binary_tree_t *)second;
+
+		while (loop)
+		{
+			if (first == loop)
+			{
+				flag = 1;
+				node = (binary_tree_t *)first;
+				break;
+			}
+			loop = loop->parent;
+		}
+		if (flag)
+		{
+			break;
+		}
+		first = first->parent;
+	}
 
 	return (node);
 }
