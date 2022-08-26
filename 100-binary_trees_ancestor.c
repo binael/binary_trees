@@ -40,6 +40,8 @@ binary_tree_t *binary_trees_ancestor(const binary_tree_t *first, const binary_tr
  */
 binary_tree_t *is_ancestor_parent(const binary_tree_t *first, const binary_tree_t *second)
 {
+	binary_tree_t *node;
+
 	if (first->parent == second)
 	{
 		return (first->parent);
@@ -49,7 +51,7 @@ binary_tree_t *is_ancestor_parent(const binary_tree_t *first, const binary_tree_
 		return (NULL);
 	}
 
-	is_ancestor_parent(first, second->parent);
+	node = is_ancestor_parent(first, second->parent);
 
-	return (NULL);
+	return (node);
 }
